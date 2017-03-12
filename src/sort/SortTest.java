@@ -1,6 +1,6 @@
 package sort;
 
-import timer.Stopwatch;
+import util.Stopwatch;
 
 /**
  * Created by Bruce on 3/4/2017.

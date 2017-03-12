@@ -1,5 +1,5 @@
 package sort;
-import timer.Stopwatch;
+import util.Stopwatch;
 import util.StdOut;
 import util.StdRandom;
 /**

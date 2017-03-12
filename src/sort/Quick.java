@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Quick {
     public static void main(String[] args){
         int[] a = {1,31,2,32,3,33,4,56,7,88,9,100};
-        sortOptimize(a,0,a.length-1);
+        sort3way(a,0,a.length-1);
         System.out.println(Arrays.toString(a));
     }
 
@@ -74,5 +74,28 @@ public class Quick {
 
     public static void sort(Double[] a) {
         sort(a, 0, a.length-1);
+    }
+
+    public static void sort3way(int[] a, int low, int high) {
+        if(low >= high) return;
+        int lt = low, i = low + 1, gt = high;
+        int v = a[low];
+        while(i <= gt) {
+            if ( a[i] < v) {
+                int tmp = a[lt];
+                a[lt] = a[i];
+                a[i] = tmp;
+                lt++;i++;
+            } else if( a[i] > v ) {
+                int tmp = a[gt];
+                a[gt] = a[i];
+                a[i] = tmp;
+                gt--;
+            } else {
+                i++;
+            }
+        }
+        sort(a, low, lt - 1);
+        sort(a, gt + 1, high);
     }
 }

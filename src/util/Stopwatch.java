@@ -11,7 +11,7 @@
  *
  ******************************************************************************/
 
-package timer;
+package util;
 
 /**
  *  The {@code Stopwatch} data type is for measuring
