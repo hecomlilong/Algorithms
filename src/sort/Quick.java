@@ -75,7 +75,6 @@ public class Quick {
     public static void sort(Double[] a) {
         sort(a, 0, a.length-1);
     }
-
     public static void sort3way(int[] a, int low, int high) {
         if(low >= high) return;
         int lt = low, i = low + 1, gt = high;
