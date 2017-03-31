@@ -13,7 +13,7 @@ public class RemoveDuplicates {
         Quick.sort(a,0,a.length - 1);
         System.out.println(Arrays.toString(a));
 
-        int len = remove(a);
+        int len = remove2(a);
         System.out.println(Arrays.toString(Arrays.copyOf(a,len)));
     }
 
@@ -29,6 +29,26 @@ public class RemoveDuplicates {
         for(i = 1; i < len; i++){
             if(a[i] != a[j]){
                 a[++j] = a[i];
+            }
+        }
+        return j + 1;
+    }
+
+    public static int remove2(int a[]) {
+        int j = 0, num = 0;
+        int len = a.length;
+        if(len == 0){
+            return 0;
+        }
+        for(int i = 1; i < len; i++) {
+            if(a[i] == a[j]) {
+                num++;
+                if(num < 2) {
+                    a[++j] = a[i];
+                }
+            }else{
+                a[++j] = a[i];
+                num = 0;
             }
         }
         return j + 1;
