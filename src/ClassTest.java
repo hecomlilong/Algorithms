@@ -5,7 +5,6 @@ import java.util.Arrays;
  */
 
 public class ClassTest {
-    private static int [] aux;
     public static void main(String[] args) {
         int[] a = {1,31,2,32,3,33,4,34,5,35};
         sort(a);
@@ -13,28 +12,29 @@ public class ClassTest {
     }
 
     public static void sort(int[] a) {
-        aux = new int[a.length];
-        sort(a, 0, a.length - 1);
+        sort3way(a, 0, a.length - 1);
     }
 
-    public static void sort(int[] a, int low, int high) {
+    public static void sort3way(int [] a, int low , int high) {
         if(low >= high) return;
-        int mid = low + (high - low) / 2;
-        sort(a, low ,mid);
-        sort(a, mid + 1, high);
-        merge(a, low, mid, high);
-    }
-
-    public static void merge(int[] a, int low, int mid, int high) {
-        int i = low, j = mid + 1;
-        for(int k = low; k <= high; k++) {
-            aux[k] = a[k];
+        int lt = low, i = low + 1, gt = high;
+        int v = a[low];
+        while(i <= gt) {
+            if(a[i] < v) {
+                int tmp = a[lt];
+                a[lt] = a[i];
+                a[i] = tmp;
+                i++;lt++;
+            }else if(a[i] > v) {
+                int tmp = a[gt];
+                a[gt] = a[i];
+                a[i] = tmp;
+                gt--;
+            }else{
+                i++;
+            }
         }
-        for(int k = low; k <= high; k++) {
-            if(i > mid) a[k] = a[j++];
-            else if(j > high) a[k] = a[i++];
-            else if(aux[j] < aux[i]) a[k] = a[j++];
-            else a[k] = a[i++];
-        }
+        sort3way(a, low, lt - 1);
+        sort3way(a, gt + 1, high);
     }
 }
