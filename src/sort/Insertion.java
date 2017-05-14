@@ -5,30 +5,25 @@ import java.util.Arrays;
 /**
  * Created by Bruce on 2/28/2017.
  */
-public class Insertion {
+public class Insertion extends SortBase {
     public static void main(String[] args){
-        int[] a = {2,435,3,45,6,22,1120,8588};
-        sort(a);
-        System.out.println(Arrays.toString(a));
+//
     }
 
-    public static void sort(int[] a){
+    public void sort(int[] a){
         int N = a.length;
         for(int i = 1; i < N; i++){
             for(int j = i; j > 0 && a[j] < a[j-1];j--){
-                int tmp = a[j];
-                a[j] = a[j-1];
-                a[j-1] = tmp;
+                swap(a,j,j-1);
             }
         }
     }
 
+
     public static void sort(int[] a, int low, int high){
         for(int i = low; i < high + 1;i++){
             for(int j = i; j > 0 && a[j] < a[j-1];j--){
-                int tmp = a[j];
-                a[j] = a[j-1];
-                a[j-1] = tmp;
+                swap(a,j,j-1);
             }
         }
     }
