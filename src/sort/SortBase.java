@@ -30,6 +30,10 @@ public class SortBase {
         obj[b] = tmp;
     }
 
+    public static boolean less(int[] obj, int a, int b) {
+        return obj[a] < obj[b];
+    }
+
     public static int[] generateRandomArray(int n, int low, int high) {
         if (n <= 0 || low > high) {
             return new int[0];
