@@ -11,7 +11,7 @@ public class SortTest {
         Quick qq = new Quick();
         int[] a = qq.generateRandomArray(n,0,n);
 //        int[] a = qq.generateNearlyOrderedArray(n,10);
-        System.out.println(Arrays.toString(a));
+//        System.out.println(Arrays.toString(a));
         int[] b = qq.copy(a);
         int[] c = qq.copy(a);
         int[] d = qq.copy(a);
