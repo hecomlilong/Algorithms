@@ -14,7 +14,7 @@ public class Insertion extends SortBase {
         int N = a.length;
         for(int i = 1; i < N; i++){
             for(int j = i; j > 0 && a[j] < a[j-1];j--){
-                swap(a,j,j-1);
+                SortTestHelper.swap(a,j,j-1);
             }
         }
     }
@@ -23,7 +23,7 @@ public class Insertion extends SortBase {
     public static void sort(int[] a, int low, int high){
         for(int i = low; i < high + 1;i++){
             for(int j = i; j > 0 && a[j] < a[j-1];j--){
-                swap(a,j,j-1);
+                SortTestHelper.swap(a,j,j-1);
             }
         }
     }

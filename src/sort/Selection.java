@@ -12,7 +12,7 @@ public class Selection extends SortBase {
                 if (a[j] < a[min])
                     min = j;
             }
-            swap(a, i, min);
+            SortTestHelper.swap(a, i, min);
         }
     }
     public static void sort(Double[] a) {

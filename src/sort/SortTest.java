@@ -9,14 +9,16 @@ public class SortTest {
     public static void main(String[] args) {
         int n = 100000;
         Quick qq = new Quick();
-//        int[] a = qq.generateRandomArray(n,0,n);
-        int[] a = qq.generateNearlyOrderedArray(n,10);
+//        int[] a = SortTestHelper.generateRandomArray(n,0,n);
+        int[] a = SortTestHelper.generateNearlyOrderedArray(n,10);
 //        System.out.println(Arrays.toString(a));
-        int[] b = qq.copy(a);
-        int[] c = qq.copy(a);
-        int[] d = qq.copy(a);
-        int[] e = qq.copy(a);
-        int[] f = qq.copy(a);
+        int[] b = SortTestHelper.copy(a);
+        int[] c = SortTestHelper.copy(a);
+        int[] d = SortTestHelper.copy(a);
+        int[] e = SortTestHelper.copy(a);
+        int[] f = SortTestHelper.copy(a);
+        int[] g = SortTestHelper.copy(a);
+        int[] h = SortTestHelper.copy(a);
         qq.testSort(a);
         Insertion ii = new Insertion();
         ii.testSort(b);
@@ -28,6 +30,10 @@ public class SortTest {
 //        hh.testSort(e);
         Merge mm = new Merge();
         mm.testSort(f);
+        MergeImp1 mm1 = new MergeImp1();
+        mm1.testSort(g);
+        MergeBU mbu = new MergeBU();
+        mbu.testSort(h);
     }
 
 

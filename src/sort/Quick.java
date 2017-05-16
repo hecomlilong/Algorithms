@@ -27,9 +27,9 @@ public class Quick extends SortBase{
             while(a[++i] < v) {if(i==high) break;}
             while(a[--j] > v) {if(j==low) break;}
             if(i>=j) break;
-            swap(a, i, j);
+            SortTestHelper.swap(a, i, j);
         }
-        swap(a,low,j);
+        SortTestHelper.swap(a,low,j);
         return j;
     }
 
@@ -84,15 +84,9 @@ public class Quick extends SortBase{
         int v = a[low];
         while(i <= gt) {
             if ( a[i] < v) {
-                int tmp = a[lt];
-                a[lt] = a[i];
-                a[i] = tmp;
-                lt++;i++;
+                SortTestHelper.swap(a, lt++,i++);
             } else if( a[i] > v ) {
-                int tmp = a[gt];
-                a[gt] = a[i];
-                a[i] = tmp;
-                gt--;
+                SortTestHelper.swap(a, gt--,i);
             } else {
                 i++;
             }

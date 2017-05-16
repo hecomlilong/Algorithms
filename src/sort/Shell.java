@@ -13,9 +13,7 @@ public class Shell extends SortBase{
         while (h >= 1){
             for (int i = h; i < N; i++) {
                 for (int j = i; j >= h && a[j] < a[j-h];j--) {
-                    int tmp = a[j];
-                    a[j] = a[j-h];
-                    a[j-h] = tmp;
+                    SortTestHelper.swap(a, j, j-h);
                 }
             }
             h = h / 3;

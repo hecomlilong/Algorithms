@@ -11,7 +11,7 @@ public class Heap extends SortBase {
         for (int k = n/2; k >= 0; k--)
             sink(pq, k, n);
         while (n > 0) {
-            swap(pq, 0, n--);
+            SortTestHelper.swap(pq, 0, n--);
             sink(pq, 0, n);
         }
     }
@@ -21,7 +21,7 @@ public class Heap extends SortBase {
             int j = 2*k;
             if (j < n && less(pq, j, j+1)) j++;
             if (!less(pq, k, j)) break;
-            swap(pq, k, j);
+            SortTestHelper.swap(pq, k, j);
             k = j;
         }
     }
