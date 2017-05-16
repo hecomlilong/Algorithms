@@ -18,10 +18,10 @@ public class SortTest {
         int[] e = qq.copy(a);
         int[] f = qq.copy(a);
         qq.testSort(a);
-//        Insertion ii = new Insertion();
-//        ii.testSort(b);
-//        InsertionImp1 ii1 = new InsertionImp1();
-//        ii1.testSort(d);
+        Insertion ii = new Insertion();
+        ii.testSort(b);
+        InsertionImp1 ii1 = new InsertionImp1();
+        ii1.testSort(d);
 //        Selection ss = new Selection();
 //        ss.testSort(c);
 //        Heap hh = new Heap();
