@@ -13,15 +13,11 @@ public class SortBase {
 
     }
     public static boolean isSorted(int[] a) {
-        boolean result = true;
         int N = a.length;
-        for(int i = 0; i < N - 1; i++) {
-            if(a[i] > a[i + 1]) {
-                result = false;
-                break;
-            }
+        for(int i = 1; i < N; i++) {
+            if(a[i] < a[i - 1]) return false;
         }
-        return result;
+        return true;
     }
 
     public static void swap(int[] obj, int a, int b) {

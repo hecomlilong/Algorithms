@@ -15,6 +15,7 @@ public class Quick extends SortBase{
     }
 
     public void sort(int[] a) {
+        StdRandom.shuffle(a);
         sort(a,0,a.length-1);
     }
 
