@@ -59,5 +59,10 @@ public class SortTestHelper {
         obj[a] = obj[b];
         obj[b] = tmp;
     }
+
+    public static int randomInt(int n) {
+        Random rand = new Random();
+        return rand.nextInt(n);
+    }
 }
 

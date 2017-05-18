@@ -7,10 +7,10 @@ import java.util.Arrays;
  */
 public class SortTest {
     public static void main(String[] args) {
-        int n = 100000;
+        int n = 1000000;
         Quick qq = new Quick();
-//        int[] a = SortTestHelper.generateRandomArray(n,0,n);
-        int[] a = SortTestHelper.generateNearlyOrderedArray(n,10);
+        int[] a = SortTestHelper.generateRandomArray(n,0,10);
+//        int[] a = SortTestHelper.generateNearlyOrderedArray(n,10);
 //        System.out.println(Arrays.toString(a));
         int[] b = SortTestHelper.copy(a);
         int[] c = SortTestHelper.copy(a);
@@ -19,21 +19,28 @@ public class SortTest {
         int[] f = SortTestHelper.copy(a);
         int[] g = SortTestHelper.copy(a);
         int[] h = SortTestHelper.copy(a);
-        qq.testSort(a);
-        Insertion ii = new Insertion();
-        ii.testSort(b);
-        InsertionImp1 ii1 = new InsertionImp1();
-        ii1.testSort(d);
+        int[] i = SortTestHelper.copy(a);
+        int[] j = SortTestHelper.copy(a);
+//        qq.testSort(a);
+//        Insertion ii = new Insertion();
+//        ii.testSort(b);
+//        InsertionImp1 ii1 = new InsertionImp1();
+//        ii1.testSort(d);
 //        Selection ss = new Selection();
 //        ss.testSort(c);
 //        Heap hh = new Heap();
 //        hh.testSort(e);
-        Merge mm = new Merge();
-        mm.testSort(f);
-        MergeImp1 mm1 = new MergeImp1();
-        mm1.testSort(g);
-        MergeBU mbu = new MergeBU();
-        mbu.testSort(h);
+//        Merge mm = new Merge();
+//        mm.testSort(f);
+//        MergeImp1 mm1 = new MergeImp1();
+//        mm1.testSort(g);
+//        MergeBU mbu = new MergeBU();
+//        mbu.testSort(h);
+//        Quick2 qq2 = new Quick2();
+//        qq2.testSort(i);
+
+        QuickAnother qa = new QuickAnother();
+        qa.testSort(j);
     }
 
 
