@@ -17,17 +17,16 @@ public class Quick2 extends SortBase {
     }
 
     public static int partition(int[] a, int low, int high) {
-        int i = low + 1;
-        int j = high;
+        int i = low + 1, j = high;
         SortTestHelper.swap(a,low,SortTestHelper.randomInt(high - low + 1) + low);
         int v = a[low];
         while(true) {
-            while(i < high && a[i] < v) i++;
-            while(j > low + 1 && a[j] > v) j--;
-            if(i >= j) break;
+            while(i <= high && a[i] < v) i++;
+            while(j >= low + 1 && a[j] > v) j--;
+            if(i > j) break;
             SortTestHelper.swap(a,i,j);
             i++;
-            j++;
+            j--;
         }
         SortTestHelper.swap(a, low, j);
         return j;

@@ -7,9 +7,9 @@ import java.util.Arrays;
  */
 public class SortTest {
     public static void main(String[] args) {
-        int n = 1000000;
+        int n = 100000;
         Quick qq = new Quick();
-        int[] a = SortTestHelper.generateRandomArray(n,0,10);
+        int[] a = SortTestHelper.generateRandomArray(n,0,n);
 //        int[] a = SortTestHelper.generateNearlyOrderedArray(n,10);
 //        System.out.println(Arrays.toString(a));
         int[] b = SortTestHelper.copy(a);
@@ -21,6 +21,7 @@ public class SortTest {
         int[] h = SortTestHelper.copy(a);
         int[] i = SortTestHelper.copy(a);
         int[] j = SortTestHelper.copy(a);
+        int[] k = SortTestHelper.copy(a);
 //        qq.testSort(a);
 //        Insertion ii = new Insertion();
 //        ii.testSort(b);
@@ -36,11 +37,13 @@ public class SortTest {
 //        mm1.testSort(g);
 //        MergeBU mbu = new MergeBU();
 //        mbu.testSort(h);
-//        Quick2 qq2 = new Quick2();
-//        qq2.testSort(i);
+        Quick2 qq2 = new Quick2();
+        qq2.testSort(i);
 
         QuickAnother qa = new QuickAnother();
         qa.testSort(j);
+        Quick3Ways qq3 = new Quick3Ways();
+        qq3.testSort(i);
     }
 
 
