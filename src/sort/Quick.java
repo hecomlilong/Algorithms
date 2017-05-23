@@ -12,6 +12,7 @@ public class Quick extends SortBase{
         int[] a = {0,1,2,10,4,5,6,7,8,9,3};
         sort(a,0,a.length - 1);
         System.out.println(Arrays.toString(a));
+        System.out.println(select(a,10));
     }
 
     public void sort(int[] a) {
@@ -93,5 +94,17 @@ public class Quick extends SortBase{
         }
         sort3way(a, low, lt - 1);
         sort3way(a, gt + 1, high);
+    }
+
+    public static int select(int[] a, int k) {
+        int i = 0, j = a.length - 1;
+        int mid;
+        while(i < j) {
+            mid = partition(a,i,j);
+            if(k < mid) j = mid - 1;
+            else if( k > mid) i = mid + 1;
+            else return a[mid];
+        }
+        return a[i];
     }
 }
