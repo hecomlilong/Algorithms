@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class SortTest {
     public static void main(String[] args) {
-        int n = 100000;
+        int n = 1000000;
         Quick qq = new Quick();
         int[] a = SortTestHelper.generateRandomArray(n,0,n);
 //        int[] a = SortTestHelper.generateNearlyOrderedArray(n,10);
@@ -22,6 +22,7 @@ public class SortTest {
         int[] i = SortTestHelper.copy(a);
         int[] j = SortTestHelper.copy(a);
         int[] k = SortTestHelper.copy(a);
+        int[] l = SortTestHelper.copy(a);
 //        qq.testSort(a);
 //        Insertion ii = new Insertion();
 //        ii.testSort(b);
@@ -29,21 +30,23 @@ public class SortTest {
 //        ii1.testSort(d);
 //        Selection ss = new Selection();
 //        ss.testSort(c);
-//        Heap hh = new Heap();
-//        hh.testSort(e);
+        Heap hh = new Heap();
+        hh.testSort(e);
+        HeapImp1 h1 = new HeapImp1();
+        h1.testSort(l);
 //        Merge mm = new Merge();
 //        mm.testSort(f);
 //        MergeImp1 mm1 = new MergeImp1();
 //        mm1.testSort(g);
 //        MergeBU mbu = new MergeBU();
 //        mbu.testSort(h);
-        Quick2 qq2 = new Quick2();
-        qq2.testSort(i);
-
-        QuickAnother qa = new QuickAnother();
-        qa.testSort(j);
-        Quick3Ways qq3 = new Quick3Ways();
-        qq3.testSort(i);
+//        Quick2 qq2 = new Quick2();
+//        qq2.testSort(i);
+//
+//        QuickAnother qa = new QuickAnother();
+//        qa.testSort(j);
+//        Quick3Ways qq3 = new Quick3Ways();
+//        qq3.testSort(i);
     }
 
 
